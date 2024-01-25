@@ -1,0 +1,76 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "mocha": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "modules": true,
+    "spread": true,
+    "globalReturn": true
+  },
+  "rules": {
+    "no-var": 2,
+    "comma-dangle": 0,
+    "consistent-return": 0,
+    "prefer-const": 1,
+    "arrow-body-style": 0,
+    "no-trailing-spaces": 1,
+    "padded-blocks": 0,
+    "semi": 0,
+    "object-curly-spacing": 0,
+    "prefer-template": 1,
+    "no-underscore-dangle": 0,
+    "no-eval": "error",
+    "indent": [
+      "warn",
+      2
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "info",
+          "error"
+        ]
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ],
+    "prefer-arrow-callback": [
+      0,
+      {
+        "allowNamedFunctions": true
+      }
+    ],
+    "func-names": [
+      "error",
+      "never"
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": true,
+        "classes": true
+      }
+    ],
+    "max-nested-callbacks": [
+      "error",
+      5
+    ]
+  }
+}

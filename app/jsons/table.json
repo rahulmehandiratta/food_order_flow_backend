@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Mehfil",
+    "shortName": "M",
+    "noOfTables": 20
+  },
+  {
+    "name": "Darbaar",
+    "shortName": "D",
+    "noOfTables": 10
+  },
+  {
+    "name": "Garden Area",
+    "shortName": "G",
+    "noOfTables": 10
+  },
+  {
+    "name": "Pickup & Delivery",
+    "shortName": "PD",
+    "noOfTables": 10
+  }
+]

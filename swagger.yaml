@@ -1,0 +1,202 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Easy Node Auth ES6
+  description: Public API
+  contact:
+    email: ishaan@wss.io
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: localhost:8040
+basePath: /
+schemes:
+  #  - https
+  - http
+tags:
+  - name: auth
+    description: all functions related user accounts
+
+paths:
+  /login:
+    post:
+      tags:
+        - "auth"
+      summary: login
+      operationId: login
+      consumes:
+        - application/json
+
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/ApiResponse"
+  /user:
+    post:
+      tags:
+        - "auth"
+      summary: add new user
+      operationId: adduser
+      consumes:
+        - application/json
+
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+              userType:
+                type: string
+                default: "user"
+
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/ApiResponse"
+    get:
+      tags:
+        - "auth"
+      summary: Get all users details
+      operationId: getAllUsers
+      consumes:
+        - application/json
+
+      produces:
+        - application/json
+      security:
+        - bearerAuth: [ ]
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiResponse'
+
+  /user/{_id}:
+    get:
+      tags:
+        - "auth"
+      summary: Get user details
+      operationId: getUser
+      consumes:
+        - application/json
+
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: _id
+          description: _id  of the user
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiResponse'
+    put:
+      tags:
+        - "auth"
+      summary: update user
+      operationId: userUpdate
+      consumes:
+        - application/json
+      produces:
+        - application/json
+
+
+      parameters:
+        - in: path
+          name: _id
+          description: _id  of the user
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+
+
+
+
+      security:
+        - bearerAuth: [ ]
+      responses:
+        "200":
+          description: successful operation
+            schema:
+              $ref: "#/definitions/ApiResponse"
+    delete:
+      tags:
+        - "auth"
+      summary: delete user
+      operationId: deleteUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: _id
+          description: _id  of the user
+          required: true
+          type: string
+      security:
+        - bearerAuth: [ ]
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ApiResponse'
+
+
+securityDefinitions:
+  bearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+
+  ApiResponse:
+    type: object
+    properties:
+      type:
+        type: string
+      success:
+        type: boolean
+      error:
+        type: boolean
+      message:
+        type: string
+      data:
+        type: object
+
