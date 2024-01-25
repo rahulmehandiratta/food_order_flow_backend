@@ -1,0 +1,24 @@
+{
+  "name": "food_flow_backend",
+  "version": "1.0.0",
+  "description": "Code for the entire scotch.io tutorial series: Complete Guide to Node Authentication",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulmehandiratta/food_order_flow_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulmehandiratta/food_order_flow_backend/issues"
+  },
+  "homepage": "https://github.com/rahulmehandiratta/food_order_flow_backend#readme"
+}
